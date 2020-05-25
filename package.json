@@ -9,7 +9,7 @@
     "start": "next start",
     "build": "yarn clean && next build",
     "export": "yarn build && next export",
-    "deploy": "yarn export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin master && rimraf out"
+    "deploy": "git checkout master && git checkout . && git pull origin master && git checkout source && yarn export && touch out/.nojekyll && cp readme.md out && git checkout master && git add out/ && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin master && rimraf out"
   },
   "dependencies": {
     "next": "^9.4.2",
