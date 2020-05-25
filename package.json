@@ -1,0 +1,25 @@
+{
+  "name": "phponl-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf .next && rimraf out",
+    "dev": "rimraf .next && next",
+    "start": "next start",
+    "build": "yarn clean && next build",
+    "export": "yarn build && next export",
+    "deploy": "yarn export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin master && rimraf out"
+  },
+  "dependencies": {
+    "next": "^9.4.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.5",
+    "@types/react": "^16.9.35",
+    "typescript": "^3.9.3"
+  }
+}
