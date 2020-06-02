@@ -9,13 +9,14 @@
     "start": "next start",
     "build": "yarn clean && next build",
     "export": "yarn build && next export",
-    "deploy": "git checkout master && git checkout . && git pull origin master && git checkout source && yarn export && touch out/.nojekyll && cp readme.md out && cp CNAME out && git checkout master && git add out/ && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin master && git checkout source && rimraf out"
+    "deploy": "git checkout source && yarn export && git add out/ && git commit -m \"Rebuild site\" && git subtree push --prefix out origin master"
   },
   "dependencies": {
     "next": "^9.4.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.7"
   },
   "devDependencies": {
     "@types/node": "^14.0.5",
