@@ -12,7 +12,7 @@
     "deploy": "git checkout source && yarn export && git add out/ && git commit -m \"Rebuild site\" && git subtree push --prefix out origin master"
   },
   "dependencies": {
-    "next": "^9.4.2",
+    "next": "^11.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rimraf": "^3.0.2",
